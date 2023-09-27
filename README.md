@@ -20,4 +20,8 @@ I was given base HTML / CSS / Javascript files to make a webpage that meets the 
 
 ## Reference documents
 
+- [JavaScript String with Quotes](https://www.geeksforgeeks.org/javascript-string-with-quotes/)
+- [JavaScript Random](https://www.w3schools.com/js/js_random.asp)
+- [How to Convert Array to String Without Commas in JavaScript?](https://linuxhint.com/convert-array-to-string-without-commas-javascript/)
+
 ## License

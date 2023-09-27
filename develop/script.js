@@ -65,15 +65,22 @@ function createPassword(l,u,n,s){
 // Execute the generate password function at the button click
 
 function generatePassword(){
-  if (askLength() !== null){
+  var passLength = askLength();
+  if (passLength !== null){
     // Checks if there is at least one char type slected
     var selectedCharType = includedCharType();
     if (!selectedCharType.includes(true)){
       alert(("Select at least one character type to include."))
     } else{
       // Generate password from the selected char types
-      console.log(createPassword(selectedCharType[0],selectedCharType[1],selectedCharType[2],selectedCharType[3]));
-
+    var baseList = createPassword(selectedCharType[0],selectedCharType[1],selectedCharType[2],selectedCharType[3]);
+    var generatedPass = [];
+    console.log(passLength)
+    for (i = 0; i < passLength; i++){
+      generatedPass.push(baseList[Math.floor(Math.random() * baseList.length + 1)]);
+      }
+      // Convert generated array to string without comma
+    return generatedPass.join("");
     }
   };
 }  
