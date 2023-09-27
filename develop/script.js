@@ -42,7 +42,25 @@ var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P"
 var numeric = [1,2,3,4,5,6,7,8,9,0];
 var specialChar = [" ",'\"',"!","#","$","%","&","\'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","\\","^","_","`","{","|","}","~"];
 
-// Generate password based on the users' input
+// Create an array of characters in selected characater type(s)
+
+function createPassword(l,u,n,s){
+  var password = [];
+  var charList = [];
+  if (l === true) {
+    charList = charList.concat(lowerCase);
+  };
+  if (u === true){
+    charList = charList.concat(upperCase);
+  };
+  if (n === true){
+    charList = charList.concat(numeric);
+  };
+  if (s === true){
+    charList = charList.concat(specialChar);
+  };
+  return charList;
+};
 
 // Execute the generate password function at the button click
 
@@ -53,7 +71,9 @@ function generatePassword(){
     if (!selectedCharType.includes(true)){
       alert(("Select at least one character type to include."))
     } else{
-      console.log(selectedCharType);
+      // Generate password from the selected char types
+      console.log(createPassword(selectedCharType[0],selectedCharType[1],selectedCharType[2],selectedCharType[3]));
+
     }
   };
 }  
