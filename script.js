@@ -35,7 +35,7 @@ function includedCharType(){
   return [hasLowercase, hasUppercase, hasNumeric, hasSpecialChar];
 }
 
-// Create arrays with ech character types
+// Create arrays with each character types
 
 var lowerCase = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 var upperCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -75,7 +75,6 @@ function generatePassword(){
       // Generate password from the selected char types
     var baseList = createPassword(selectedCharType[0],selectedCharType[1],selectedCharType[2],selectedCharType[3]);
     var generatedPass = [];
-    console.log(passLength)
     for (i = 0; i < passLength; i++){
       generatedPass.push(baseList[Math.floor(Math.random() * baseList.length + 1)]);
       }
