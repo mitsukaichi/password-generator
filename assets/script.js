@@ -22,7 +22,7 @@ function askLength(){
     return length
   } else {
     alert("Your input is invalid. Add password length between 8 and 127.")
-    return null;
+    return "";
   }
 }
 
@@ -66,11 +66,12 @@ function createPassword(l,u,n,s){
 
 function generatePassword(){
   var passLength = askLength();
-  if (passLength !== null){
+  if (passLength !== ""){
     // Checks if there is at least one char type slected
     var selectedCharType = includedCharType();
     if (!selectedCharType.includes(true)){
-      alert(("Select at least one character type to include."))
+      alert(("Select at least one character type to include."));
+      return "";
     } else{
       // Generate password from the selected char types
     var baseList = createPassword(selectedCharType[0],selectedCharType[1],selectedCharType[2],selectedCharType[3]);
@@ -81,5 +82,7 @@ function generatePassword(){
       // Convert generated array to string without comma
     return generatedPass.join("");
     }
+  }else{
+    return "";
   };
 }  
